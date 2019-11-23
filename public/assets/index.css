@@ -1,0 +1,399 @@
+* {
+    z-index: 0;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+#logo-header {
+    width: 211px;
+    margin: auto;
+    float: initial;
+}
+
+#logohome {
+    position: absolute;
+    top: 0;
+    left: initial;
+    padding: 20px;
+    width: 100%;
+    max-width: 1220px;
+    height: 130px;
+}
+
+#backgroundhome {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 101%;
+    background-image: linear-gradient(205deg, #2196f3, #ffeb3b);
+    background-attachment: fixed;
+}
+
+.card-content-header {
+    padding: 26px 10px 0 60px;
+    height: 71px;
+    overflow-y: auto;
+    line-height: 21px;
+}
+
+.indicator {
+    cursor: pointer;
+}
+
+.card {
+    background-color: #FFFFFF;
+    box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, .12) !important;
+    border-radius: 5px;
+}
+
+.reference {
+    position: absolute;
+    width: auto;
+    height: 60px;
+    padding: 20px 10px;
+    margin: calc((100vh - 400px) / 2);
+    font-weight: 500;
+}
+
+.reference a {
+    font-weight: 400;
+}
+
+.card#card-visitors {
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    height: 400px;
+    margin: auto;
+    float: initial;
+}
+
+.card#card-visitors input[type="checkbox"].card-visitors-indicator {
+    display: none;
+}
+
+.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header label.indicator {
+    top: 30%;
+    right: calc(50% - 25px);
+    margin: calc(-30% - 25px) calc(50% - 25px) 0 0;
+    background-color: transparent;
+    box-shadow: none;
+    -webkit-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    -moz-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    -o-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    -ms-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+}
+
+.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header label.indicator .open {
+    opacity: 0;
+    box-shadow: none;
+    -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+    -moz-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+    -o-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+    -ms-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+    transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
+}
+
+.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header label.indicator .close {
+    transform: scale(1);
+    box-shadow: none;
+    -webkit-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    -moz-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    -o-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    -ms-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+}
+
+.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header .content .data {
+    opacity: 1;
+    -webkit-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+    -moz-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+    -o-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+    -ms-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+    transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+}
+
+.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header .content .data .graph .vertical .day .line-container {
+    max-height: 80%;
+    -webkit-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    -moz-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    -o-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    -ms-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+    transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
+}
+
+.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header .content .float {
+    opacity: 1;
+    transform: scale(10);
+    -webkit-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+    -moz-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+    -o-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+    -ms-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+}
+
+.card#card-visitors .header {
+    width: 100%;
+    height: 70%;
+    background-color: #2196f3;
+}
+
+.card#card-visitors .header label.indicator {
+    position: absolute;
+    z-index: 1;
+    width: 50px;
+    height: 50px;
+    top: calc(70% - 25px);
+    right: 20px;
+    margin: 0;
+    border-radius: 100%;
+    background-color: #009688;
+    box-shadow: 1px 1px 3px 1px #0000002e;
+    -webkit-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+    -moz-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+    -o-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+    -ms-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+    transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
+}
+
+.card#card-visitors .header label.indicator .open {
+    position: absolute;
+    margin: 11.5px 16px;
+    opacity: 1;
+    -webkit-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+    -moz-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+    -o-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+    -ms-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+    transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
+}
+
+.card#card-visitors .header label.indicator .close {
+    margin: 12.5px 17.5px;
+    transform: scale(0);
+    box-shadow: none;
+    -webkit-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -moz-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -o-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -ms-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+}
+
+.card#card-visitors .header .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.card#card-visitors .header .content > * {
+    color: #FFFFFF;
+    font-weight: 500;
+}
+
+.card#card-visitors .header .content .data {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    background-color: #009688;
+    -webkit-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -moz-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -o-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -ms-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+}
+
+.card#card-visitors .header .content .data .top {
+    width: 100%;
+    height: 40%;
+}
+
+.card#card-visitors .header .content .data .top .title {
+    width: 100%;
+}
+
+.card#card-visitors .header .content .data .graph::-webkit-scrollbar {
+    width: 7px
+}
+
+.card#card-visitors .header .content .data .graph {
+    position: absolute;
+    width: calc(100% - 15px);
+    height: 74%;
+    margin: 0 0 0 15px;
+    overflow-y: auto;
+    padding-right: 15px;
+    padding-bottom: 20px;
+    bottom: 0;
+    left: 0;
+}
+
+.card#card-visitors .header .content .data .graph .horizontal {
+    width: 100%;
+    height: 100%;
+}
+
+.card#card-visitors .header .content .data .graph .horizontal div {
+    height: 20%;
+}
+
+.card#card-visitors .header .content .data .graph .horizontal div hr {
+    border: 1px solid #FFFFFF;
+    opacity: .5;
+}
+
+.card#card-visitors .header .content .data .graph .horizontal div p {
+    opacity: .5;
+}
+
+.card#card-visitors .header .content .data .graph .vertical {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -moz-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    position: absolute;
+    width: 90%;
+    height: 100%;
+    top: 0;
+    margin-left: 10%;
+}
+
+.card#card-visitors .header .content .data .graph .vertical .day {
+    position: relative;
+    width: calc(100% / 14);
+    height: 100%;
+}
+
+.card#card-visitors .header .content .data .graph .vertical .day .line-container {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: absolute;
+    width: 2px;
+    height: 80%;
+    max-height: 0;
+    bottom: 20%;
+    margin: 0 calc((100% - 2px) / 2);
+    -webkit-transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -moz-transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -o-transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -ms-transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+}
+
+.card#card-visitors .header .content .data .graph .vertical .day .line-container .line {
+    width: 100%;
+    background-color: #FFFFFF;
+}
+
+.card#card-visitors .header .content .data .graph .vertical .day p {
+    position: absolute;
+    height: 20%;
+    bottom: 0;
+    opacity: .5;
+}
+
+.card#card-visitors .header .content .data .graph .vertical .day .hidden {
+    opacity: 0;
+}
+
+.card#card-visitors .header .content .title {
+    font-size: 25px;
+    line-height: 30px;
+    text-align: center;
+    background: rgba(0, 0, 0, .3);
+    width: 96%;
+    margin: 2%;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.card#card-visitors .header .content .date {
+    width: 200px;
+    text-align: center;
+    margin: 2% auto;
+    background: rgba(255, 152, 0, .9);
+    border-radius: 4px;
+    position: absolute;
+    left: 5px;
+    opacity: 1;
+    bottom: 0;
+}
+
+.card#card-visitors .header .content .float {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: calc(50% - 25px);
+    opacity: 0;
+    border-radius: 100%;
+    background-color: #009688;
+    -webkit-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -moz-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -o-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    -ms-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
+}
+
+.card#card-visitors .info {
+    width: 100%;
+    height: 30%;
+    padding: 8px 15px;
+    color: #9E9E9E;
+}
+
+.card#card-visitors .info .counter {
+    margin-top: 8px;
+    color: #212121;
+    font-size: 45px;
+    font-weight: 400;
+    line-height: 40px;
+}
+
+.card#card-visitors .info .counter .unit {
+    font-size: 15px;
+}
+
+.btnediteventos {
+    position: absolute;
+    top: 27px;
+    right: 2px;
+    padding: 5px 10px;
+    margin-top: 0;
+}
+
+@media (min-width: 990px) {
+    #logo-header {
+        float: left;
+    }
+
+    .btnediteventos {
+        position: relative;
+        top: initial;
+        right: initial;
+        padding: 12px 24px;
+        margin-top: 30px
+    }
+}
