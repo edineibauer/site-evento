@@ -20,7 +20,7 @@ function showEventos() {
             });
 
             setTimeout(function () {
-                $("#logohome").html(Mustache.render(tpl.logo_home, {}));
+                $("#logohome").html(Mustache.render(tpl.logo_home, {home: HOME, vendor: VENDOR}));
             },500);
         }
     });
