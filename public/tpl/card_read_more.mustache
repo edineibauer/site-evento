@@ -1,31 +1,16 @@
-<div class="col s12 m4 l3 padding-small animate-top" style="animation-duration: .8s">
-    <div class="card" id="card-visitors">
-        <input type="checkbox" class="card-visitors-indicator" id="card-visitors-indicator-{{id}}" />
-        <div class="header" style="background: url({{imagem}})">
-            <label class="indicator" for="card-visitors-indicator-{{id}}">
-                <svg class="open" width="15" height="25" style="margin-left: 19px">
-                    <line x2="1.5" y1="13.5" x1="15" y2="2" style="stroke: #FFFFFF; stroke-width: 3" />
-                    <line x2="1.5" y1="11.5" x1="15" y2="23" style="stroke: #FFFFFF; stroke-width: 3" />
-                </svg>
-                <svg class="close" width="15" height="25">
-                    <line x1="1.5" y1="13.5" x2="15" y2="0" style="stroke: #FFFFFF; stroke-width: 3" />
-                    <line x1="1.5" y1="11.5" x2="15" y2="25" style="stroke: #FFFFFF; stroke-width: 3" />
-                </svg>
-            </label>
-            <div class="content">
-                <div class="data">
-                    <h4 class="font-large upper card-content-header">{{bloco}} {{sala}}</h4>
-                    <div class="graph">
-                        <p class="font-bold padding-bottom">{{setor}}</p>
-                        {{descricao}}
-                    </div>
-                </div>
-                <div class="float"></div>
+<div class="col padding-small animate-right card-parent">
+    <div class="card card-visitors pointer" rel="{{id}}">
+        <div class="header" style="background: url({{imagem}})"></div>
+        <div class="info col padding-large padding-32">
+            <p class="date font-small">
+            <div class="left padding-right">
+                <img src="{{home}}{{vendor}}site-evento/public/assets/img/date.png" width="20" height="20" style="width: 20px;height: 20px">
             </div>
-        </div>
-        <div class="info">
-            <p class="date font-small">{{data}}</p>
-            <h3 class="font-xlarge padding-4 color-text-gray-dark" style="line-height: 28px;">{{nome}}</h3>
+            <div class="left font-medium padding-tiny font-bold">
+                {{data}}
+            </div>
+            </p>
+            <h3 class="font-xlarge col padding-32 font-bold color-text-black" style="line-height: 28px;">{{nome}}</h3>
         </div>
     </div>
 </div>

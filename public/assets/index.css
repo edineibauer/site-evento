@@ -5,10 +5,75 @@
     overflow: hidden;
 }
 
+.btn-close {
+    position: absolute;
+    right: 60px;
+    top: 60px;
+    background: #eee;
+    border-radius: 50px;
+    padding: 5px 5px 0;
+    border: solid 3px #EF3251;
+}
+
+.color-primary {
+    color: #EF3251
+}
+
+#evento {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    padding: 60px;
+    transition: all ease .5s;
+    background: url("{$home}{$vendor}site-evento/public/assets/img/fundo.png");
+    background-attachment: fixed;
+    background-size: contain;
+    transform: translateY(-100%);
+}
+
+#evento.active {
+    transform: translateY(0);
+}
+
+#home-parent {
+    height: 550px;
+    overflow-x: scroll;
+    position: relative;
+}
+
+#home-parent::-webkit-scrollbar {
+    display: none;
+}
+
+#home {
+    width: 30000px;
+    max-width: max-content;
+}
+
+.card-parent.active {
+    transform: scale(1.1);
+    margin: 0 20px;
+}
+
+.card-parent {
+    width: 350px;
+    margin: 0 5px;
+    transition: all .5s ease;
+}
+
 #logo-header {
-    width: 211px;
+    width: 240px;
     margin: auto;
     float: initial;
+}
+
+#logo-header h1 {
+    padding: 37px 0 0 7px;
+    font-size: 35px;
+    color: #EF3251 !important;
 }
 
 #logohome {
@@ -27,8 +92,9 @@
     left: 0;
     width: 100%;
     height: 101%;
-    background-image: linear-gradient(205deg, #2196f3, #ffeb3b);
+    background: url("{$home}{$vendor}site-evento/public/assets/img/fundo.png");
     background-attachment: fixed;
+    background-size: contain;
 }
 
 .card-content-header {
@@ -45,7 +111,7 @@
 .card {
     background-color: #FFFFFF;
     box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, .12) !important;
-    border-radius: 5px;
+    border-radius: 0;
 }
 
 .reference {
@@ -61,92 +127,27 @@
     font-weight: 400;
 }
 
-.card#card-visitors {
+.card-visitors {
     position: relative;
-    max-width: 300px;
+    max-width: 350px;
     width: 100%;
-    height: 400px;
+    height: 350px;
     margin: auto;
     float: initial;
 }
 
-.card#card-visitors input[type="checkbox"].card-visitors-indicator {
-    display: none;
-}
-
-.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header label.indicator {
-    top: 30%;
-    right: calc(50% - 25px);
-    margin: calc(-30% - 25px) calc(50% - 25px) 0 0;
-    background-color: transparent;
-    box-shadow: none;
-    -webkit-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    -moz-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    -o-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    -ms-transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, background-color 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s, margin 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-}
-
-.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header label.indicator .open {
-    opacity: 0;
-    box-shadow: none;
-    -webkit-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
-    -moz-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
-    -o-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
-    -ms-transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
-    transition: opacity 0.2s cubic-bezier(0.4, 0.0, 0.2, 1) 0.2s;
-}
-
-.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header label.indicator .close {
-    transform: scale(1);
-    box-shadow: none;
-    -webkit-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    -moz-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    -o-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    -ms-transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-}
-
-.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header .content .data {
-    opacity: 1;
-    -webkit-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
-    -moz-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
-    -o-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
-    -ms-transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
-    transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
-}
-
-.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header .content .data .graph .vertical .day .line-container {
-    max-height: 80%;
-    -webkit-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    -moz-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    -o-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    -ms-transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-    transition: max-height 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0.9s;
-}
-
-.card#card-visitors input[type="checkbox"].card-visitors-indicator:checked + .header .content .float {
-    opacity: 1;
-    transform: scale(10);
-    -webkit-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
-    -moz-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
-    -o-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
-    -ms-transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
-    transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
-}
-
-.card#card-visitors .header {
+.card-visitors .header {
     width: 100%;
-    height: 70%;
+    height: 45%;
     background-color: #2196f3;
 }
 
-.card#card-visitors .header label.indicator {
+.card-visitors .header label.indicator {
     position: absolute;
     z-index: 1;
     width: 50px;
     height: 50px;
-    top: calc(70% - 25px);
+    top: calc(45% - 25px);
     right: 20px;
     margin: 0;
     border-radius: 100%;
@@ -159,7 +160,7 @@
     transition: top 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, right 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s, background-color 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, margin 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.3s;
 }
 
-.card#card-visitors .header label.indicator .open {
+.card-visitors .header label.indicator .open {
     position: absolute;
     margin: 11.5px 16px;
     opacity: 1;
@@ -170,7 +171,7 @@
     transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0.6s;
 }
 
-.card#card-visitors .header label.indicator .close {
+.card-visitors .header label.indicator .close {
     margin: 12.5px 17.5px;
     transform: scale(0);
     box-shadow: none;
@@ -181,18 +182,18 @@
     transition: transform 0.6s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
 }
 
-.card#card-visitors .header .content {
+.card-visitors .header .content {
     position: relative;
     width: 100%;
     height: 100%;
 }
 
-.card#card-visitors .header .content > * {
+.card-visitors .header .content > * {
     color: #FFFFFF;
     font-weight: 500;
 }
 
-.card#card-visitors .header .content .data {
+.card-visitors .header .content .data {
     position: absolute;
     z-index: 2;
     width: 100%;
@@ -206,20 +207,20 @@
     transition: opacity 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
 }
 
-.card#card-visitors .header .content .data .top {
+.card-visitors .header .content .data .top {
     width: 100%;
     height: 40%;
 }
 
-.card#card-visitors .header .content .data .top .title {
+.card-visitors .header .content .data .top .title {
     width: 100%;
 }
 
-.card#card-visitors .header .content .data .graph::-webkit-scrollbar {
+.card-visitors .header .content .data .graph::-webkit-scrollbar {
     width: 7px
 }
 
-.card#card-visitors .header .content .data .graph {
+.card-visitors .header .content .data .graph {
     position: absolute;
     width: calc(100% - 15px);
     height: 74%;
@@ -231,25 +232,25 @@
     left: 0;
 }
 
-.card#card-visitors .header .content .data .graph .horizontal {
+.card-visitors .header .content .data .graph .horizontal {
     width: 100%;
     height: 100%;
 }
 
-.card#card-visitors .header .content .data .graph .horizontal div {
+.card-visitors .header .content .data .graph .horizontal div {
     height: 20%;
 }
 
-.card#card-visitors .header .content .data .graph .horizontal div hr {
+.card-visitors .header .content .data .graph .horizontal div hr {
     border: 1px solid #FFFFFF;
     opacity: .5;
 }
 
-.card#card-visitors .header .content .data .graph .horizontal div p {
+.card-visitors .header .content .data .graph .horizontal div p {
     opacity: .5;
 }
 
-.card#card-visitors .header .content .data .graph .vertical {
+.card-visitors .header .content .data .graph .vertical {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -269,13 +270,13 @@
     margin-left: 10%;
 }
 
-.card#card-visitors .header .content .data .graph .vertical .day {
+.card-visitors .header .content .data .graph .vertical .day {
     position: relative;
     width: calc(100% / 14);
     height: 100%;
 }
 
-.card#card-visitors .header .content .data .graph .vertical .day .line-container {
+.card-visitors .header .content .data .graph .vertical .day .line-container {
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -302,23 +303,23 @@
     transition: max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
 }
 
-.card#card-visitors .header .content .data .graph .vertical .day .line-container .line {
+.card-visitors .header .content .data .graph .vertical .day .line-container .line {
     width: 100%;
     background-color: #FFFFFF;
 }
 
-.card#card-visitors .header .content .data .graph .vertical .day p {
+.card-visitors .header .content .data .graph .vertical .day p {
     position: absolute;
     height: 20%;
     bottom: 0;
     opacity: .5;
 }
 
-.card#card-visitors .header .content .data .graph .vertical .day .hidden {
+.card-visitors .header .content .data .graph .vertical .day .hidden {
     opacity: 0;
 }
 
-.card#card-visitors .header .content .title {
+.card-visitors .header .content .title {
     font-size: 25px;
     line-height: 30px;
     text-align: center;
@@ -329,7 +330,7 @@
     border-radius: 4px;
 }
 
-.card#card-visitors .header .content .date {
+.card-visitors .header .content .date {
     width: 200px;
     text-align: center;
     margin: 2% auto;
@@ -341,7 +342,7 @@
     bottom: 0;
 }
 
-.card#card-visitors .header .content .float {
+.card-visitors .header .content .float {
     position: absolute;
     width: 50px;
     height: 50px;
@@ -357,14 +358,14 @@
     transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1) 0s, opacity 0s cubic-bezier(0.4, 0.0, 0.2, 1) 0s;
 }
 
-.card#card-visitors .info {
+.card-visitors .info {
     width: 100%;
-    height: 30%;
+    height: 55%;
     padding: 8px 15px;
     color: #9E9E9E;
 }
 
-.card#card-visitors .info .counter {
+.card-visitors .info .counter {
     margin-top: 8px;
     color: #212121;
     font-size: 45px;
@@ -372,7 +373,7 @@
     line-height: 40px;
 }
 
-.card#card-visitors .info .counter .unit {
+.card-visitors .info .counter .unit {
     font-size: 15px;
 }
 
