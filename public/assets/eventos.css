@@ -2,6 +2,12 @@ body {
     margin: 0;
 }
 
+html {
+    background: url(https://eventos.ag3tecnologia.com.br/libs/ueb/site-evento/public/assets/img/fundo.png);
+    background-attachment: fixed;
+    background-size: contain;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -3158,9 +3164,6 @@ progress, .r-index sub, .r-index sup {
     left: 0;
     width: 100%;
     height: 101%;
-    background: url(https://eventos.ag3tecnologia.com.br/libs/ueb/site-evento/public/assets/img/fundo.png);
-    background-attachment: fixed;
-    background-size: contain
 }
 
 .r-index .card-content-header {
@@ -3204,7 +3207,7 @@ progress, .r-index sub, .r-index sup {
 
 .r-index .card-visitors .header {
     width: 100%;
-    height: 45%;
+    height: 188px;
     background-color: #2196f3;
 	background-size: cover!important;
 	background-position: center!important;

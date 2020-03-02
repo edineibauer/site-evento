@@ -9,6 +9,7 @@
             <div class="col s10">
                 <div class="col padding-bottom font-xlarge color-primary font-bold">Data</div>
                 <div class="col font-bold color-text-gray">{{data_de_inicio}}</div>
+                {{#have_data_de_termino}}<div class="col font-bold color-text-gray">{{data_de_termino}}</div>{{/have_data_de_termino}}
             </div>
         </div>
         <div class="padding-32 col">
@@ -18,6 +19,7 @@
             <div class="col s10">
                 <div class="col padding-bottom font-xlarge color-primary font-bold">Horario</div>
                 <div class="col font-bold color-text-gray">{{hora_de_inicio}}</div>
+                {{#have_hora_de_termino}}<div class="col font-bold color-text-gray">{{hora_de_termino}}</div>{{/have_hora_de_termino}}
             </div>
         </div>
         <div class="padding-32 col">
@@ -33,5 +35,5 @@
 </div>
 <div class="col s12 m6 padding-large">
     <h2 class="font-bold padding-0">Apresentação do Evento</h2>
-    <p class="font-large padding-48 col">{{descricao}}</p>
+    <p class="font-large padding-48 col" style="max-height: 500px;overflow-y: auto;">{{{descricao}}}</p>
 </div>

@@ -12,12 +12,14 @@ function showEventos() {
 				showEventos();
 			} else {
 
+                eventos = orderBy(eventos, "data_de_inicio").reverse();
+
 				$.each(eventos, function (i, e) {
 					if(e.ativo) {
 						e.imagem = JSON.parse(e.imagem);
 						setTimeout(function () {
-							e.imagem = (!isEmpty(e.imagem) ? e.imagem[0].urls[300] : HOME + "public/assets/img/default.png");
-							e.data = moment(e.data_de_inicio).format("ll");
+							e.imagem = (!isEmpty(e.imagem) ? e.imagem[0].url : HOME + "public/assets/img/default.png");
+							e.data = moment(e.data_de_inicio).format('L') + (e.data_de_termino ? " a " + moment(e.data_de_termino).format('L') : "");
 							e.home = HOME;
 							e.vendor = VENDOR;
 							$("#home").append(Mustache.render(tpl.card_read_more, e));
@@ -35,8 +37,15 @@ function openCard(id) {
     $("#evento-content").html("");
     db.exeRead("eventos", parseInt(id)).then(evento => {
         evento.data = moment(evento.data_de_inicio).format("ll");
+
+        evento.have_hora_de_termino = !isEmpty(evento.hora_de_termino);
+        evento.have_data_de_termino = !isEmpty(evento.data_de_termino);
+
         evento.data_de_inicio = moment(evento.data_de_inicio).format("ll");
         evento.data_de_termino = moment(evento.data_de_termino).format("ll");
+
+        evento = orderBy(evento, "data_de_inicio");
+
         $("#evento-content").htmlTemplate("card_post", Object.assign({home: HOME, vendor: VENDOR}, evento)).then(() => {
             $("#evento").addClass("active");
         });
