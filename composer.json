@@ -1,14 +1,5 @@
 {
-  "name": "ueb/site-evento",
-  "description": "",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Edinei J. Bauer",
-      "email": "edineibauer@gmail.com"
+    "require": {
+        "ueb/site-evento": "^1.0"
     }
-  ],
-  "require": {
-    "ueb/dashboard": "*"
-  }
 }

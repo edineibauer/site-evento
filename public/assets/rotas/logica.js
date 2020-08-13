@@ -1,10 +1,3 @@
-/**
- * Pontos de origem da rota
- */
-const pontos = ["P60", "P61", "P69", "P27", "P46", "P53"];
-const firstDirectionPonto = {"P60": "L", "P61": "N", "P69": "L", "P27": "L", "P46": "O", "P53": "O"};
-const rotas = {caminhos: []};
-
 let promesas = [];
 promesas.push(getJSON("public/assets/rotas/unescMapName.json"));
 promesas.push(getJSON("public/assets/rotas/unescMapRoutes.json"));
@@ -20,24 +13,23 @@ const iconDirection = {
     "O": {"S": "LEFT", "L": "DOWN", "O": "UP", "N": "RIGHT"}
 };
 
+const firstDirectionPonto = {"P3": "L", "P7": "O", "P14": "O", "P62": "L", "P68": "L"};
+
 Promise.all(promesas).then(r => {
     let names = r[0];
     let routes = r[1];
     let distancias = r[2];
     let directions = r[3];
 
+    let pontos = ["P3", "P7", "P14", "P62", "P68"];
+    let rotas = {caminhos: []};
+
     /**
      * Para cada ponto, obtém as rotas
      */
-    for (let i in routes) {
-        let ponto = i;
+    for (let i in pontos) {
 
-        /**
-         * Não constrói rotas a partir de arestas, nem a partir de estacionamentos
-         */
-        if(ponto.indexOf('P') === -1 || names[ponto] === "Estacionamento")
-            continue;
-
+        let ponto = pontos[i];
         let totem = {
             descricao: names[ponto],
             id: ponto,
@@ -51,13 +43,6 @@ Promise.all(promesas).then(r => {
          * Para cada Destino a partir deste ponto
          */
         for (let idDestino in solutions) {
-
-            /**
-             * Não constrói rotas a para estacionamentos e nem para totens
-             */
-            if(ponto === idDestino || names[idDestino] === "Estacionamento" || ["P3", "P7", "P14"].indexOf(idDestino) > -1)
-                continue;
-
             let destino = {
                 "descricao": names[idDestino],
                 "orientacoes": [],
@@ -67,8 +52,7 @@ Promise.all(promesas).then(r => {
             };
 
             let lastPonto = ponto;
-            // let direction = firstDirectionPonto[lastPonto];
-            let direction = "N";
+            let direction = firstDirectionPonto[lastPonto];
             let orientacao = {};
 
             /**
@@ -76,9 +60,7 @@ Promise.all(promesas).then(r => {
              */
             for (let e in solutions[idDestino]) {
                 let idRota = solutions[idDestino][e];
-                // let nextDirection = directions[lastPonto][idRota];
-                let nextDirection = "N";
-
+                let nextDirection = directions[lastPonto][idRota];
                 lastPonto = idRota;
 
                 /**

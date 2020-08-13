@@ -3092,11 +3092,12 @@ progress, .r-index sub, .r-index sup {
 }
 
 .r-index #evento {
-    position: absolute;
+    z-index: 9999;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background: #fff;
     padding: 60px;
     transition: all ease .5s;
@@ -3110,52 +3111,46 @@ progress, .r-index sub, .r-index sup {
     transform: translateY(0)
 }
 
-.r-index #home-parent {
-    height: 550px;
+.r-index #home-parent, #destaque-parent {
+    height: 440px;
     overflow-x: scroll;
-    position: relative
+    position: relative;
+    margin-left: 109px;
+    width: calc(100% - 109px)!important;
 }
 
-.r-index #home-parent::-webkit-scrollbar {
+.r-index #home-parent::-webkit-scrollbar, #destaque-parent::-webkit-scrollbar {
     display: none
 }
 
-.r-index #home {
+.r-index #home, #destaque {
     width: 30000px;
-    max-width: max-content
-}
-
-.r-index .card-parent.active {
-    transform: scale(1.1);
-    margin: 0 20px
+    max-width: max-content;
+    padding-right: 200px;
 }
 
 .r-index .card-parent {
     width: 350px;
-    margin: 0 5px;
-    transition: all .5s ease
+    margin: 0 10px;
 }
 
 .r-index #logo-header {
     width: 240px;
     margin: auto;
-    float: initial
+    float: left
 }
 
 .r-index #logo-header h1 {
-    padding: 37px 0 0 7px;
+    padding: 5px 0;
     font-size: 35px;
     color: #EF3251 !important
 }
 
 .r-index #logohome {
-    position: absolute;
-    top: 0;
-    left: initial;
-    padding: 20px;
+    position: relative;
+    padding: 40px 20px 0;
     width: 100%;
     max-width: 1220px;
-    height: 130px
 }
 
 .r-index #backgroundhome {
@@ -3460,10 +3455,6 @@ progress, .r-index sub, .r-index sup {
 }
 
 @media (min-width: 990px) {
-    .r-index #logo-header {
-        float: left
-    }
-
     .r-index .btnediteventos {
         position: relative;
         top: initial;
@@ -3475,5 +3466,60 @@ progress, .r-index sub, .r-index sup {
 }
 
 #core-content {
-    margin-top: 0
+    margin-top: 0;
+    min-height: 100vh!important;
+}
+
+#filter {
+    float: right;
+    padding: 5px 0 0;
+}
+
+#filter select{
+    padding: 10px 20px;
+    font-size: 24px;
+    border-radius: 5px;
+    border: solid 2px #dddddd;
+    margin-bottom: 0;
+}
+
+.title-vertical {
+    position: absolute;
+    left: -99px;
+    top: 230px;
+    font-size: 54px!important;
+    color: #CCCCCC;
+    font-family: Roboto;
+    font-weight: 600!important;
+    transform: rotateZ(-90deg);
+    text-transform: uppercase;
+}
+
+.title-vertical.todos {
+    top: 670px;
+    left: -35px;
+}
+
+.titleVertical {
+    background: #ef3251;
+    padding: 5px 53px!important;
+    box-shadow: 0 6px 11px -9px #5d5d5d;
+    z-index: 1;
+    color: white;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    position: absolute;
+    left: -104px;
+    top: 275px;
+    font-size: 44px!important;
+    font-weight: 600!important;
+    transform: rotateZ(-90deg);
+    text-transform: uppercase;
+}
+
+.titleVertical.todos {
+    top: 715px;
+    left: -104px;
+    padding: 5px 104px!important;
+    background: #5ab431;
 }
